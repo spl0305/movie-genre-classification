@@ -9,21 +9,23 @@ Assignment: GrowthLink Internship - Machine Learning Track
 Build a multi-label classification model that can predict one or more genres for a movie based on its plot summary.
 
 📂 Project Structure
-plaintext
-Copy
-Edit
+
 movie-genre-classification/
+
 ├── data/
-│   └── train_data.txt
+ │   └── train_data.txt
+ 
 ├── src/
 │   ├── preprocess.py
 │   ├── train.py
 │   ├── evaluate.py
 │   ├── feature_importance.py
 │   └── misclassification_analysis.py
-├── models/
+ 
+ ├── models/
 │   ├── genre_classifier.pkl
 │   └── genre_binarizer.pkl
+
 ├── output_images.png
 ├── main.py
 ├── README.md
