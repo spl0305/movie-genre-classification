@@ -1,0 +1,12 @@
+📎 Requirements
+
+
+nginx
+Copy
+Edit
+pandas
+numpy
+scikit-learn
+nltk
+matplotlib
+seaborn
