@@ -1,91 +1,111 @@
-# movie-genre-classification
-A well-trained model capable of accurately classifying movies into genres based on textual descriptions, along with insights into feature importance and misclassifications. 
+# 🎬 Movie Genre Classification
 
-🎬 Movie Genre Classification
-Task: Predict the genre(s) of movies based on their textual descriptions using Machine Learning.
-Assignment: GrowthLink Internship - Machine Learning Track
+A Machine Learning project to predict movie genres based on textual movie descriptions.
 
-🧠 Problem Statement
-Build a multi-label classification model that can predict one or more genres for a movie based on its plot summary.
+> Developed as part of the **GrowthLink Internship** Machine Learning assignment.
 
-📂 Project Structure
+---
 
+## 🧠 Problem Statement
+
+Build a multi-label classification model that can accurately predict one or more genres for a movie based on its plot summary.
+
+---
+
+## 📂 Project Structure
+
+```plaintext
 movie-genre-classification/
-
 ├── data/
- │   └── train_data.txt
- 
+│   └── train_data.txt
 ├── src/
 │   ├── preprocess.py
 │   ├── train.py
 │   ├── evaluate.py
 │   ├── feature_importance.py
 │   └── misclassification_analysis.py
- 
- ├── models/
+├── models/
 │   ├── genre_classifier.pkl
 │   └── genre_binarizer.pkl
-
-├── output_images.png
+├── outputs/
+│   ├── confusion_matrix_action.png
+│   ├── confusion_matrix_comedy.png
+│   └── ... (confusion matrices for each genre)
+├── requirements.txt
 ├── main.py
 ├── README.md
+
 🛠 Approach
 
 Step	Description
-1. Load Data	Parsed train_data.txt (movie title, genre, description)
-2. Preprocessing	Cleaned text: lowercasing, removing punctuation, stopwords
-3. Feature Extraction	Used TF-IDF vectorization (max 5000 features)
-4. Model Training	Trained One-vs-Rest Logistic Regression model
-5. Evaluation	Calculated precision, recall, F1-score per genre
-6. Feature Analysis	Identified top words per genre
-7. Misclassification	Visualized confusion matrices for each genre
 
-🔥 Technologies Used
-Python 3
+📥 Load Data	Parsed text file into movie descriptions and genres
+🧹 Preprocessing	Cleaned text (lowercase, punctuation removal, stopwords removal)
+🔢 Feature Extraction	Applied TF-IDF vectorization (max 5000 features)
+🤖 Model Training	Trained OneVsRestClassifier with Logistic Regression
+📊 Evaluation	Measured precision, recall, F1-score
+📈 Feature Analysis	Identified important words influencing genre predictions
+📉 Misclassification Analysis	Plotted confusion matrices for each genre
+
+🚀 Technologies Used
+
+Python 3.11
 Scikit-learn
 Pandas
 NLTK
-Matplotlib & Seaborn (for visualization)
+Matplotlib
+Seaborn
 
-
-📈 Results
+📈 Model Performance
 
 Metric	Score
 Micro F1-Score	48%
 Macro F1-Score	16%
 Samples F1-Score	35%
 
-Model performs strongly on popular genres like drama, comedy, documentary.
-Rare genres like musical, fantasy, war have lower performance (dataset imbalance).
+✅ The model performs strongly for popular genres like drama, comedy, and documentary.
 
+🔥 Feature Importance (Sample)
 
-📊 Insights
+Comedy: funny, joke, humor, laugh, hilarious
+Horror: murder, haunted, ghost, killing
+Drama: family, father, love, relationship
 
-Top Features for Genres:
+📉 Misclassification Insights
 
-Example:
-Comedy: funny, joke, humor, laugh
-drama: family, love, relationship, father
-Horror: murder, haunted, ghost, killer
+Thriller is often confused with Crime.
+Family movies sometimes predicted as Comedy.
+Rare genres (like musical, war) have lower accuracy.
 
-Misclassifications Observed:
-Thriller sometimes confused with Crime
-Family movies occasionally mislabeled as Comedy
+Confusion matrices are available as in png format for each genre
 
-🚀 How to Run Locally
-Clone the repository:
-git clone https://github.com/your-username/movie-genre-classification.git
-cd movie-genre-classification
-
-Create a virtual environment and activate it:
-python -m venv venv
+📋 How to Run Locally
+1.Clone the repository:
+ git clone https://github.com/your-username/movie-genre-classification.git
+ cd movie-genre-classification
+2.Create a virtual environment:
+ python -m venv venv
 .\venv\Scripts\activate
+3.Install required packages:
+ pip install -r requirements.txt
+4.Run the project:
+ python main.py
 
-Install dependencies:
-pip install -r requirements.txt
+📎 Requirements
+pandas
+numpy
+scikit-learn
+nltk
+matplotlib
+seaborn
 
-Run the pipeline:
-python main.py
+📌 Future Improvements 
+Use pre-trained word embeddings (Word2Vec, GloVe)
+Try deep learning models (LSTM, Transformers)
+Handle rare genres with data augmentation or SMOTE
+Perform hyperparameter tuning
+
+
 
 
 👨‍💻 Author
